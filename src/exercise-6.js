@@ -28,4 +28,10 @@
 //     },
 //   ];
 
-module.exports = () => {};
+module.exports = (array, filterFunction) => {
+  if (!array) {
+    throw new Error("Invalid argument");
+  }
+
+  return array.filter(filterFunction);
+};
