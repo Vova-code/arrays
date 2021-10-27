@@ -2,4 +2,12 @@
 
 // Throws if no argument given.
 
-module.exports = () => {};
+module.exports = (array) => {
+  if (!array) {
+    throw new Error("Invalid argument");
+  }
+
+  return array
+    .filter((element) => element.rating > 4)
+    .map(({ id, title }) => ({ id, title }));
+};
