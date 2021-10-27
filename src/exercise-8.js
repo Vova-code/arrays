@@ -3,4 +3,15 @@
 
 // Throws if no argument given.
 
-module.exports = () => {};
+module.exports = (array) => {
+  let expectedArray = [];
+  if (!array) {
+    throw new Error("Invalid argument");
+  }
+
+  array.forEach((element) => {
+    element.forEach((element) => expectedArray.push(element));
+  });
+
+  return expectedArray;
+};
